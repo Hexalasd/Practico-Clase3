@@ -34,7 +34,7 @@ public class main {
             for (Estudiante l : lista) {
                 if (l.getApellido().equals(apellido)) {
                     repetido = true;
-                    break; // no hace falta seguir buscando
+                    break; 
                 }
             }
 
