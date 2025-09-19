@@ -19,31 +19,30 @@ public class main {
         String apellido;
         String club;
         
-        for(int i = lista.size(); i < 3; i++){
+                for(int i = 0; i < 3; i++){
             System.out.println("--- Ingreso de Datos del alumno ---\n");
-            System.out.println("Ingresar el nombre del estudiante " +i);
+            System.out.println("Ingresar el nombre del estudiante " + i);
             nombre = gato.nextLine();
-            System.out.println("Ingresar el apellido del estudiante " +i);
+            System.out.println("Ingresar el apellido del estudiante " + i);
             apellido = gato.nextLine();
             System.out.println("Ingresar el club en que esta el estudiante " + i);
             club = gato.nextLine();
-            Estudiante estudiante = new Estudiante (nombre,apellido,club);
-            
+
+            Estudiante estudiante = new Estudiante(nombre, apellido, club);
+
             boolean repetido = false;
-            for(Estudiante l : lista){
-                if(l.getApellido().equals(apellido)){
-                    repetido=true;
-                    
+            for (Estudiante l : lista) {
+                if (l.getApellido().equals(apellido)) {
+                    repetido = true;
+                    break; // no hace falta seguir buscando
                 }
-                
-                if(repetido){
-                    System.out.println("--X el estudiante tiene el mismo apellido, no lo vamos a añadir por pelotudo X-- \n");
-                }else{
-                    System.out.println(estudiante);
-                    lista.add(new Estudiante(nombre,apellido,club));
-                    System.out.println("--- se añadio el estudiante con exito ---\n");
-                }
-                
+            }
+
+            if (repetido) {
+                System.out.println("--X El estudiante tiene el mismo apellido, no lo vamos a añadir X--\n");
+            } else {
+                lista.add(estudiante);
+                System.out.println("--- Se añadió el estudiante con éxito ---\n");
             }
         }
     }
